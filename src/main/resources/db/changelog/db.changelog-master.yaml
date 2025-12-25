@@ -1,0 +1,27 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create-schema-x6-user
+      author: max
+      changes:
+        - sql:
+            sql: |
+              CREATE SCHEMA IF NOT EXISTS x6;
+
+  - changeSet:
+      id: create-user-table
+      author: max
+      changes:
+        - sql:
+            sql: |
+              CREATE TABLE IF NOT EXISTS x6."user" (
+                id SERIAL PRIMARY KEY,
+                login VARCHAR UNIQUE NOT NULL,
+                first_name VARCHAR NOT NULL,
+                last_name VARCHAR NOT NULL,
+                email VARCHAR UNIQUE NOT NULL,
+                birthday DATE,
+                created_at TIMESTAMP NOT NULL DEFAULT now(),
+                status status NOT NULL DEFAULT 'ACTIVE',
+                updated_at TIMESTAMP
+              );
