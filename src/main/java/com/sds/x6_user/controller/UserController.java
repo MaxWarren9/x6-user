@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}/exists")
-    public boolean isUserAvailable(@PathVariable long id) {
+    public boolean isUserAvailable(@PathVariable("id") Long id) {
         return userService.isAvailable(id);
     }
 
@@ -47,7 +47,7 @@ public class UserController {
 
     @PatchMapping("/{id}")
     @Operation(summary = "Обновить пользователя")
-    public User update(@PathVariable long id, @RequestBody User user) {
+    public User update(@PathVariable("id") Long id, @RequestBody User user) {
         return userService.update(id, user);
     }
 }

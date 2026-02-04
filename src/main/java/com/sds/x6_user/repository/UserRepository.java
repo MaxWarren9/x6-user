@@ -63,7 +63,7 @@ public class UserRepository {
         return jdbcTemplate.queryForObject(UPDATE, params, userMapper);
     }
 
-    public MapSqlParameterSource userToSql(final User user) {
+    private MapSqlParameterSource userToSql(final User user) {
         MapSqlParameterSource params = new MapSqlParameterSource();
         return params
                 .addValue("login", user.getLogin())

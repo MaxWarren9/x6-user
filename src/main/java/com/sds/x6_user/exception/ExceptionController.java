@@ -1,6 +1,5 @@
-package com.sds.x6_user.controller;
+package com.sds.x6_user.exception;
 
-import com.sds.x6_user.exception.UserException;
 import com.sds.x6_user.model.ApiError;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
